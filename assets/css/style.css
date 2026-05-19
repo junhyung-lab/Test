@@ -1,0 +1,394 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", sans-serif;
+  background: #f8fafc;
+  color: #111827;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* 사이드바 */
+.sidebar {
+  width: 220px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu div {
+  padding: 13px 16px;
+  border-radius: 12px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.menu .active {
+  background: #eef5ff;
+  color: #2563eb;
+}
+
+.help {
+  margin-top: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+  color: #64748b;
+}
+
+/* 메인 */
+.main {
+  flex: 1;
+  padding: 26px 30px;
+  overflow: hidden;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.badge {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search,
+.btn {
+  height: 44px;
+  border: 1px solid #dbe3ef;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0 16px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.primary {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 34px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 32px;
+}
+
+.tabs div {
+  padding-bottom: 16px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.tabs .active {
+  color: #2563eb;
+  border-bottom: 3px solid #2563eb;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* 보드 */
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  gap: 16px;
+  height: calc(100vh - 230px);
+}
+
+.column {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 14px;
+  overflow: auto;
+}
+
+.column.drag-over {
+  background: #eaf3ff;
+  border-color: #60a5fa;
+}
+
+.column h2 {
+  margin: 6px 4px 18px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.count {
+  background: #dbeafe;
+  color: #2563eb;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 13px;
+}
+
+/* 지원자 카드 */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 12px;
+  cursor: grab;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card.dragging {
+  opacity: 0.45;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.info {
+  margin-top: 14px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.more {
+  text-align: right;
+  color: #94a3b8;
+  font-weight: 900;
+}
+
+.add {
+  border: 1px dashed #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  border-radius: 14px;
+  height: 50px;
+  width: 100%;
+  font-weight: 800;
+}
+
+/* 색상 */
+.green { background: #22c55e; }
+.blue { background: #3b82f6; }
+.purple { background: #8b5cf6; }
+.orange { background: #fb923c; }
+.mint { background: #14b8a6; }
+.pink { background: #fb7185; }
+
+.status {
+  margin-left: auto;
+  font-size: 12px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.pass {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.fail {
+  background: #fee2e2;
+  color: #ef4444;
+}
+/* 변경 예정 카드 */
+.card.pending {
+  border-color: #2563eb;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.14);
+}
+
+.pending-info {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.pending-badge {
+  background: #dbeafe;
+  color: #2563eb;
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* 저장/취소 하단 바 */
+.pending-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  min-width: 520px;
+  max-width: calc(100vw - 48px);
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 30;
+}
+
+.pending-bar.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.pending-bar strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.pending-bar span {
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.pending-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.pending-actions .btn {
+  height: 40px;
+}
+
+/* 토스트 메시지 */
+.toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-12px);
+  background: #111827;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 13px 18px;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 40;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 금지 이동 시 카드 흔들림 */
+.card.shake {
+  animation: cardShake 0.38s ease;
+  border-color: #ef4444;
+}
+
+@keyframes cardShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+@media (max-width: 900px) {
+  .pending-bar {
+    min-width: auto;
+    width: calc(100vw - 32px);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pending-actions {
+    width: 100%;
+  }
+
+  .pending-actions .btn {
+    flex: 1;
+  }
+}

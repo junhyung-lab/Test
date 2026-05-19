@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HR ATS MVP</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">🔷 MyCompany</div>
+
+      <div class="menu">
+        <div>홈</div>
+        <div class="active">채용</div>
+        <div>지원자</div>
+        <div>평가</div>
+        <div>캘린더</div>
+        <div>리포트</div>
+        <div>설정</div>
+      </div>
+
+      <div class="help">
+        도움말<br><br>
+        접기
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="top">
+        <div class="title">
+          <h1>개발자 채용</h1>
+          <span class="badge">채용 진행 중</span>
+        </div>
+
+        <div class="actions">
+          <input class="search" placeholder="지원자 검색" />
+          <button class="btn">필터</button>
+          <button class="btn">공고 미리보기</button>
+          <button class="btn primary">+ 지원자 추가</button>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="active">채용 관리</div>
+        <div>지원자 목록</div>
+        <div>캘린더</div>
+        <div>통계</div>
+        <div>설정</div>
+      </div>
+
+      <div class="toolbar">
+        <button class="btn">⚙ 단계 관리</button>
+        <button class="btn">▦ 보드 보기</button>
+      </div>
+
+      <section class="board" id="board"></section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
